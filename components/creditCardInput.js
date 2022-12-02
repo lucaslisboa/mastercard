@@ -420,14 +420,26 @@ class creditCardInput extends HTMLElement {
         const fullNameText = this.shadowRoot.querySelector('#fullNameText');
         const fullNameBackText = this.shadowRoot.querySelector('#fullNameBackText');
         fullNameField.addEventListener("keyup", function(e) {
+            // Apply default value if field is empty
+            if (fullNameField.value.length === 0) {
+                fullNameText.innerHTML = 'FULL NAME';
+                fullNameBackText.innerHTML = 'FULL NAME';
+                return;
+            }
+
             fullNameText.innerHTML = fullNameField.value;
             fullNameBackText.innerHTML = fullNameField.value;
-            render()
         });
 
         const cardNumberField = this.shadowRoot.querySelector('#cardNumber');
         const cardNumberText = this.shadowRoot.querySelector('#cardNumberText');
         cardNumberField.addEventListener("keyup", function(e) {
+
+            // Apply default value if field is empty
+            if (cardNumberField.value.length === 0) {
+                cardNumberText.innerHTML = '0000 0000 0000 0000';
+                return;
+            }
 
             // Apply credit card number mask
             let cardNumberMasked = cardNumberField.value;
@@ -443,18 +455,39 @@ class creditCardInput extends HTMLElement {
         const expirationMonthField = this.shadowRoot.querySelector('#expirationMonth');
         const expirationMonthText = this.shadowRoot.querySelector('#expirationMonthText');
         expirationMonthField.addEventListener("keyup", function(e) {
+
+            // Apply default value if field is empty
+            if (expirationMonthField.value.length === 0) {
+                expirationMonthText.innerHTML = '00';
+                return;
+            }
+
             expirationMonthText.innerHTML = expirationMonthField.value;
         });
 
         const expirationYearField = this.shadowRoot.querySelector('#expirationYear');
         const expirationYearFieldText = this.shadowRoot.querySelector('#expirationYearText');
         expirationYearField.addEventListener("keyup", function(e) {
+            
+            // Apply default value if field is empty
+            if (expirationYearField.value.length === 0) {
+                expirationYearFieldText.innerHTML = '00';
+                return;
+            }
+
             expirationYearFieldText.innerHTML = expirationYearField.value;
         });
 
         const securityCodeField = this.shadowRoot.querySelector('#securityCode');
         const securityCodeText = this.shadowRoot.querySelector('#securityCodeText');
         securityCodeField.addEventListener("keyup", function(e) {
+
+            // Apply default value if field is empty
+            if (securityCodeField.value.length === 0) {
+                securityCodeText.innerHTML = '000';
+                return;
+            }
+
             securityCodeText.innerHTML = securityCodeField.value;
         });
     }
