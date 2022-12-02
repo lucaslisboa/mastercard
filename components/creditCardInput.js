@@ -370,12 +370,6 @@ class creditCardInput extends HTMLElement {
         <div>
         `;
 
-        this.inputValidations = this.inputValidations.bind(this);
-        this.validationNumberFields = this.validationNumberFields.bind(this);
-        this.fillFormFields = this.fillFormFields.bind(this);
-        this.flipCard = this.flipCard.bind(this);       
-        this.onSubmit = this.onSubmit.bind(this);
-        
         shadow.appendChild(creditCardInputContainer);
     }
 
