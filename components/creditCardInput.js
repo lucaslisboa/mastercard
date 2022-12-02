@@ -287,7 +287,7 @@ class creditCardInput extends HTMLElement {
                 <div class="front">
                     <div class="card-header">
                         <div class="card-chip"></div>
-                        <img class="card-contactless-icon" src="./assets/images/contactless.png">
+                        <img class="card-contactless-icon" src="./assets/images/contactless.png" alt="Contactless Symbol">
                     </div>
 
                     <div class="card-body">
@@ -312,7 +312,7 @@ class creditCardInput extends HTMLElement {
                                 </div>
                             </div>
 
-                            <img class="card-logo" src="./assets/images/mastercard-logo.svg">
+                            <img class="card-logo" src="./assets/images/mastercard-logo.svg" alt="Mastercard logo">
                         </div>
                     </div>
                 </div>
