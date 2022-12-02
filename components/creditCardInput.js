@@ -365,7 +365,7 @@ class creditCardInput extends HTMLElement {
             </form>
 
             <div class="errors">
-                <ul class="item-list"></ul>
+                <ul class="error-list"></ul>
             </div>
         <div>
         `;
@@ -545,7 +545,7 @@ class creditCardInput extends HTMLElement {
 
             // Valid form
             const formErrors = this.validForm();
-            this.itemList = this.shadowRoot.querySelector('.item-list');
+            this.itemList = this.shadowRoot.querySelector('.error-list');
             this.itemList.innerHTML = '';
             if (formErrors.length > 0) {
                 formErrors.forEach((error) => {
@@ -564,9 +564,11 @@ class creditCardInput extends HTMLElement {
                 securityCode: data.get('securityCode')
             };
             
+            // Print the data form object on console log only for check.
+            // Please, remove this line before production
             console.log(formData);
 
-            // Send form
+            // TODO: Send form
         }
     }
 
