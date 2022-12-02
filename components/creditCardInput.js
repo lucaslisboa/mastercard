@@ -361,7 +361,6 @@ class creditCardInput extends HTMLElement {
                 </div>
                 <div class="field-form">
                     <button class="btn-submit jump-hover" type="submit" name="submit" value="Save">Save</button>
-                    <!--<button disabled class="btn-submit jump-hover btn-disabled" type="submit" name="submit" value="Save">Save</button>-->
                 </div>
             </form>
 
@@ -435,7 +434,16 @@ class creditCardInput extends HTMLElement {
         const cardNumberField = this.shadowRoot.querySelector('#cardNumber');
         const cardNumberText = this.shadowRoot.querySelector('#cardNumberText');
         cardNumberField.addEventListener("keyup", function(e) {
-            cardNumberText.innerHTML = cardNumberField.value;
+
+            // Apply credit card number mask
+            let cardNumberMasked = cardNumberField.value;
+            cardNumberMasked = cardNumberMasked.replace(/\D/g,"");           
+            cardNumberMasked = cardNumberMasked.replace(/(\d{4})(\d)/,"$1 $2");
+            cardNumberMasked = cardNumberMasked.replace(/(\d{4})(\d)/,"$1 $2");
+            cardNumberMasked = cardNumberMasked.replace(/(\d{4})(\d)/,"$1 $2");
+            cardNumberMasked = cardNumberMasked.replace(/(\d{4})(\d)/,"$1 $2");
+
+            cardNumberText.innerHTML = cardNumberMasked;
         });
 
         const expirationMonthField = this.shadowRoot.querySelector('#expirationMonth');
